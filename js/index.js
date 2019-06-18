@@ -2,21 +2,11 @@
 
 const images = document.querySelectorAll('img');
 
-    images[0].addEventListener('dblclick', (event) => {
+images.forEach((n) => {
+    n.addEventListener('click', event => {
         event.target.style.border = 'thick solid lightblue';
-    });
-
-    images[1].addEventListener('click', (event) => {
-        event.target.style.border = 'thick solid lightblue';
-    });
-
-    images[2].addEventListener('click', (event) => {
-        event.target.style.border = 'thick solid lightblue';
-    });
-
-    images[3].addEventListener('click', (event) => {
-        event.target.style.border = 'thick solid lightblue';
-    });
+    })
+})
 
 // 2. Change First Heading Colors When Moused Over
 
@@ -32,13 +22,28 @@ const sectHeadings = document.querySelectorAll('h2');
         event.target.style.color = '#212529';
     });
 
-// 3. Navigation Animation
+// 3. Navigation 
 
-const nav = document.querySelectorAll('.nav');
+const nav = document.querySelectorAll('.nav-link');
 
-    nav.addEventListener('mousedown', (event) => {
-        target.style.backgroundImage = "url('adventure.jpg')";
-    });
+    // nav.addEventListener('mouseover', (event) => {
+    //     target.style.fontSize = '2rem';
+    // });
+
+    nav.forEach((n) => {
+        n.addEventListener('mouseover', event => {
+            event.target.style.color = 'lightblue';
+        })
+        n.addEventListener('mouseleave', event => {
+            event.target.style.color = '';
+        })
+    })
+
+    // nav.forEach((n) => {
+    //     n.addEventListener('mouseleave', event => {
+    //         event.target.style.color = '';
+    //     })
+    // })
 
 // Copy Pop-up When a Selection is Made
 
