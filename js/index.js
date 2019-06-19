@@ -2,53 +2,46 @@
 
 const images = document.querySelectorAll('img');
 
-images.forEach((n) => {
-    n.addEventListener('click', event => {
-        event.target.style.border = 'thick solid lightblue';
+    images.forEach((n) => {
+        n.addEventListener('click', event => {
+            event.target.style.border = 'thick solid lightblue';
+        })
     })
-})
 
-// 2. Change First Heading Colors When Moused Over
+// 2. & 3. Change First Heading Colors When Moused Over
 
 const sectHeadings = document.querySelectorAll('h2');
 
-    sectHeadings[0].addEventListener('mouseover', (event) => {
-        event.target.style.backgroundColor = 'lightblue';
-        event.target.style.color = '#FFFFFF';
-    });
-
-    sectHeadings[0].addEventListener('mouseleave', (event) => {
-        event.target.style.backgroundColor = '#FFFFFF';
-        event.target.style.color = '#212529';
-    });
-
-// 3. Navigation 
-
-const nav = document.querySelectorAll('.nav-link');
-
-    // nav.addEventListener('mouseover', (event) => {
-    //     target.style.fontSize = '2rem';
-    // });
-
-    nav.forEach((n) => {
-        n.addEventListener('mouseover', event => {
-            event.target.style.color = 'lightblue';
+    sectHeadings.forEach((n) => {
+        n.addEventListener('mouseover', (event) => {
+            event.target.style.backgroundColor = 'lightblue';
+            event.target.style.color = '#FFFFFF';
         })
-        n.addEventListener('mouseleave', event => {
+        n.addEventListener('mouseleave', (event) => {
+            event.target.style.backgroundColor = '';
             event.target.style.color = '';
         })
     })
 
-    // nav.forEach((n) => {
-    //     n.addEventListener('mouseleave', event => {
-    //         event.target.style.color = '';
-    //     })
-    // })
+// 4. & 5. Navigation 
 
-// Copy Pop-up When a Selection is Made
+const nav = document.querySelectorAll('.nav-link');
 
-// const para = document.querySelectorAll('p');
+    nav.forEach((n) => {
+        n.addEventListener('mouseover', event => {
+            event.target.style.color = 'lightblue';
+            event.target.style.fontSize = '2rem';
+        })
+        n.addEventListener('mouseleave', event => {
+            event.target.style.color = '';
+            event.target.style.fontSize = '';
+        })
+    })
 
-//     para[0].addEventListener('select', (event) => {
+// 6. Logo Heading
 
-//     })
+const logo = document.querySelector('.logo-heading');
+
+    logo.addEventListener('mouseup', (event) => {
+        event.target.style.color = 'yellow';
+    })
