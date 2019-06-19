@@ -38,10 +38,53 @@ const nav = document.querySelectorAll('.nav-link');
         })
     })
 
-// 6. Logo Heading
+// 6. Logo Heading Turns Yellow on Mouse Release
 
 const logo = document.querySelector('.logo-heading');
 
     logo.addEventListener('mouseup', (event) => {
         event.target.style.color = 'yellow';
     })
+
+// 7. Footer Background Image on Click
+
+const footer = document.querySelector('.footer');
+
+    footer.addEventListener('click', event => {
+        event.target.style.backgroundImage = "url('sunset-ocean.jpg')";
+        event.target.style.fontSize = '2rem';
+        event.target.style.color = 'lightblue';
+    })
+
+// 8. Paragraph Background Color After Dragging
+
+const para = document.querySelectorAll('p');
+
+    para.forEach((n) => {
+        n.addEventListener('drag', event => {
+            event.target.style.backgroundColor = 'lightblue';
+        })
+    })
+
+// 9. H4 Disappears When Right-Clicked
+
+const headerFour = document.querySelectorAll('h4');
+
+    headerFour.forEach((n) => {
+        n.addEventListener('contextmenu', event => {
+            event.target.style.display = 'none';
+        })
+    })
+
+// 10. Buttons
+
+const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach((n) => {
+        n.addEventListener('dblclick', event => {
+            alert('You clicked a button!');
+        })
+    })
+
+
+
